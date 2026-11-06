@@ -16,3 +16,9 @@
 - 👤 [Explore the creator's projects](https://go.ondev.store/ILikeSDBH).
 - 🌍 [Create with OMGithub](https://go.ondev.store/).
 <!-- omgithub:readme:end -->
+
+## Webrunner: City Swing
+
+A small, browser-playable 3D web-swinging game. Click **Start Swinging**, hold **Space** to cast and swing, steer with **A/D** or the arrow keys, and press **Shift** to boost. On touchscreens, use the on-screen steer, swing, and boost buttons. Press **Esc** to pause.
+
+The city, skyline, hero, and collectible tokens are generated in Three.js; no build step is required. Serve this folder over HTTP to play (for example, `python3 -m http.server 3002`).

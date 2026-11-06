@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07101e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%2307101e' stroke='%2366dff4' stroke-width='2'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='38' fill='white'%3EW%3C/text%3E%3C/svg%3E" />
+  <title>Webrunner: City Swing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="scene" aria-label="3D city swinging game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Webrunner home"><span class="brand-mark">W</span><span>WEB<span class="brand-light">RUNNER</span></span></a>
+      <div class="mission"><span class="live-dot"></span><span>MANHATTAN // FREE ROAM</span></div>
+      <button class="sound-button" id="sound-button" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+    </header>
+    <section class="hud" id="hud" aria-live="polite">
+      <div class="stat-block"><span class="eyebrow">DISTANCE</span><strong id="distance">000</strong><small>m</small></div>
+      <div class="stat-block score-stat"><span class="eyebrow">CITY TOKENS</span><strong id="score">00</strong><small>/ 12</small></div>
+      <div class="speed-wrap"><div class="speed-label"><span class="eyebrow">VELOCITY</span><span id="speed-value">0 KM/H</span></div><div class="speed-track"><i id="speed-meter"></i></div></div>
+      <div class="objective"><span class="objective-icon">✦</span><div><span class="eyebrow">CURRENT OBJECTIVE</span><strong id="objective-text">Collect the city tokens</strong></div></div>
+    </section>
+    <div class="crosshair" id="crosshair"><span></span></div>
+    <aside class="toast" id="toast"><span class="toast-symbol">✦</span><span id="toast-text">TOKEN COLLECTED</span></aside>
+    <section class="start-screen" id="start-screen">
+      <div class="start-copy">
+        <p class="kicker"><span class="kicker-line"></span> YOUR CITY. YOUR MOVE.</p>
+        <h1>OWN THE<br><span>SKYLINE.</span></h1>
+        <p class="intro">The city is your playground. Swing between the towers, catch the light, and leave the streets behind.</p>
+        <button class="play-button" id="play-button"><span>START SWINGING</span><b>↗</b></button>
+        <p class="start-note">12 CITY TOKENS • ONE ENDLESS CITY</p>
+      </div>
+      <div class="hero-tag"><span class="hero-tag-line"></span><span>THE ROOFTOPS<br>ARE CALLING</span></div>
+      <div class="controls-card">
+        <span class="eyebrow">YOUR CONTROLS</span>
+        <div class="control-row"><kbd>SPACE</kbd><span>Hold to web-swing</span></div>
+        <div class="control-row"><kbd>A</kbd><kbd>D</kbd><span>Steer through the city</span></div>
+        <div class="control-row"><kbd>SHIFT</kbd><span>Web zip / speed boost</span></div>
+      </div>
+      <div class="start-bottom">BEST EXPERIENCED WITH SOUND <span>•</span> DESKTOP & MOBILE</div>
+    </section>
+    <section class="pause-screen hidden" id="pause-screen">
+      <p class="kicker">TAKE A BREATHER</p><h2>PAUSED<span>.</span></h2>
+      <button class="play-button" id="resume-button"><span>BACK TO THE CITY</span><b>↗</b></button>
+      <p class="pause-hint">Press <kbd>ESC</kbd> to resume</p>
+    </section>
+    <div class="mobile-controls" id="mobile-controls">
+      <button class="touch-steer" data-key="a" aria-label="Steer left">‹</button>
+      <button class="touch-steer" data-key="d" aria-label="Steer right">›</button>
+      <button class="touch-swing" data-key="space">SWING</button>
+      <button class="touch-boost" data-key="shift" aria-label="Boost">↗</button>
+    </div>
+    <footer class="footer"><span>NYC // 40°43′ N</span><span class="footer-center">A LITTLE HEIGHT CHANGES EVERYTHING.</span><span id="frame-rate">WEBRUNNER — 001</span></footer>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
